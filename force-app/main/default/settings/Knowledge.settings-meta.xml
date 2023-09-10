@@ -13,7 +13,15 @@
     <enableChatterQuestionKBDeflection>false</enableChatterQuestionKBDeflection>
     <enableCreateEditOnArticlesTab>true</enableCreateEditOnArticlesTab>
     <enableExternalMediaContent>true</enableExternalMediaContent>
+    <enableKbStandardSharing>false</enableKbStandardSharing>
     <enableKnowledge>true</enableKnowledge>
+    <enableKnowledgeAgentContribution>false</enableKnowledgeAgentContribution>
+    <enableKnowledgeAnswersPromotion>false</enableKnowledgeAnswersPromotion>
+    <enableKnowledgeArticleTextHighlights>true</enableKnowledgeArticleTextHighlights>
+    <enableKnowledgeCaseRL>false</enableKnowledgeCaseRL>
+    <enableKnowledgeKeywordAutoComplete>true</enableKnowledgeKeywordAutoComplete>
+    <enableKnowledgeTitleAutoComplete>true</enableKnowledgeTitleAutoComplete>
+    <enableLightningKbAutoLoadRichTextField>false</enableLightningKbAutoLoadRichTextField>
     <enableLightningKnowledge>true</enableLightningKnowledge>
     <showArticleSummariesCustomerPortal>true</showArticleSummariesCustomerPortal>
     <showArticleSummariesInternalApp>true</showArticleSummariesInternalApp>
@@ -37,4 +45,5 @@
             </field>
         </workOrderLineItemFields>
     </suggestedArticles>
+    <votingEnabled>true</votingEnabled>
 </KnowledgeSettings>

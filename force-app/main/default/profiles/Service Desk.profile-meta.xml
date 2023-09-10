@@ -655,12 +655,12 @@
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-Account Layout</layout>
-        <recordType>Account.Business_Customer</recordType>
+        <layout>Account-Agent</layout>
+        <recordType>Account.Call_Center_Agent</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-Individual Customer</layout>
-        <recordType>Account.Call_Center_Agent</recordType>
+        <layout>Account-Business Customer</layout>
+        <recordType>Account.Business_Customer</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Account-Individual Customer</layout>

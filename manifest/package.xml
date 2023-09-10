@@ -104,6 +104,10 @@
         <name>Queue</name>
     </types>
     <types>
+        <members>Work_Order__c.Validate_Case_Status</members>
+        <name>ValidationRule</name>
+    </types>
+    <types>
         <members>*</members>
         <name>ReportType</name>
     </types>
