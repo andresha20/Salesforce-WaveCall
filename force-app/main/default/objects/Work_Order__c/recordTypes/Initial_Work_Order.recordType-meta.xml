@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Work_Order</fullName>
+    <active>true</active>
+    <label>Initial Work Order</label>
+    <picklistValues>
+        <picklist>Assistance_Type__c</picklist>
+        <values>
+            <fullName>Online Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physical Support</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Schedule_Picker__c</picklist>
+        <values>
+            <fullName>07%3A00 to 09%3A00</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>09%3A00 to 11%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11%3A00 to 13%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%3A00 to 15%3A00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15%3A00 to 17%3A00</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

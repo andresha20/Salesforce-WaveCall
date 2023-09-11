@@ -161,6 +161,7 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Work Orders</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <searchLayouts></searchLayouts>
     <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>

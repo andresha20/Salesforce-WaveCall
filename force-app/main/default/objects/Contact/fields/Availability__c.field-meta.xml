@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Availability__c</fullName>
+    <externalId>false</externalId>
+    <label>Availability</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>07:00 to 09:00</fullName>
+                <default>true</default>
+                <label>07:00 to 09:00</label>
+            </value>
+            <value>
+                <fullName>09:00 to 11:00</fullName>
+                <default>false</default>
+                <label>09:00 to 11:00</label>
+            </value>
+            <value>
+                <fullName>11:00 to 13:00</fullName>
+                <default>false</default>
+                <label>11:00 to 13:00</label>
+            </value>
+            <value>
+                <fullName>13:00 to 15:00</fullName>
+                <default>false</default>
+                <label>13:00 to 15:00</label>
+            </value>
+            <value>
+                <fullName>15:00 to 17:00</fullName>
+                <default>false</default>
+                <label>15:00 to 17:00</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

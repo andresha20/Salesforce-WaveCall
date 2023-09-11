@@ -488,6 +488,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Availability__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Birthdate</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -599,6 +604,31 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Title</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.X07_00_to_09_00__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.X09_00_to_11_00__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.X11_00_to_13_00__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.X13_00_to_15_00__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.X15_00_to_17_00__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -987,6 +1017,10 @@
     <layoutAssignments>
         <layout>Work_Order__c-Work Order Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Work_Order__c-Work Order Layout</layout>
+        <recordType>Work_Order__c.Initial_Work_Order</recordType>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -1038,6 +1072,11 @@
         <default>false</default>
         <recordType>Knowledge__kav.FAQ</recordType>
         <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Work_Order__c.Initial_Work_Order</recordType>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Knowledge__kav</tab>
