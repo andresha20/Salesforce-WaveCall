@@ -1,0 +1,11 @@
+<template>
+    <lightning-combobox
+        name="dynamicScheduler"
+        label="Select desired availability"
+        value={selectedValue}
+        placeholder="Select the customer's desired availability"
+        options={picklistValues}
+        onchange={handleChange}
+    ></lightning-combobox>
+    <c-technicians-list selected-value-from-parent={selectedValue}></c-technicians-list>
+</template>
