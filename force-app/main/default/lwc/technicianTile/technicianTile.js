@@ -9,18 +9,20 @@ export default class TechnicianTile extends LightningElement {
         return this._activeContact;
     };
     set activeContact(value) {
-        console.log('RAN ACTIVE CONTACT', value)
         this.setAttribute('activeContact', value);
         this._activeContact = value;
         this.handleValueChange(value);
     }
 
-    handleOpenRecordClick() {
+    get isActive() {
+        return this.technician.Id == this._activeContact;
+    }
+
+    handleOpenRecordClick(event) {
         const selectEvent = new CustomEvent('selectcontact', {
             detail: this.technician.Id
         });
-        this.isActiveContact = true;
-        console.log(this.isActiveContact);
+        this._activeContact = this.technician.Id;
         this.dispatchEvent(selectEvent);
     }
     handleValueChange(value) {

@@ -34,13 +34,13 @@
                         selected-days-value-from-parent={selectedDayValue}
                         selected-time-value-from-parent={selectedTimeValue}
                         handle-contact-selection={handleContactSelection}
-                        active-contact={technician}
+                        active-contact={activeContact}
                     ></c-technicians-list>
                 </template>
                 <template if:false={selectedTimeValue}>
                     <p>Select a day and hour block to see the available technicians.</p>
                 </template>
-                <template if:true={technician}>
+                <template if:true={activeContact}>
                     <lightning-button label="Create Work Order" onclick={createWorkOrder} variant="brand"></lightning-button>
                 </template>
             </form>

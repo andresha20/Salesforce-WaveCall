@@ -1,6 +1,7 @@
 <template>
     <lightning-card variant="Narrow" title={technician.Name} icon-name="standard:contact">
-        <lightning-button if:false={isActiveContact} label="Select" slot="actions" onclick={handleOpenRecordClick}>></lightning-button>
+        <lightning-button if:false={isActive} label="Select" slot="actions" onclick={handleOpenRecordClick}></lightning-button>
+        <lightning-icon if:true={isActive} icon-name="action:approval" slot="actions" alternative-text="Selected" title="Selected"></lightning-icon>
         <p class="slds-var-p-horizontal_small">{technician.Email}</p>
         <p class="slds-var-p-horizontal_small">{technician.Phone}</p>
         <p slot="footer">{technician.Title}</p>

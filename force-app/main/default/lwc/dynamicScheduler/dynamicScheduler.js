@@ -14,7 +14,7 @@ export default class DynamicScheduler extends LightningElement {
     assistanceTypeValues = [];
     daysPicklistValues = [];
     timePicklistValues = [];
-    technician;
+    activeContact;
     selectedDayValue = 'Monday';
     selectedTimeValue = '07:00 to 09:00';
 
@@ -62,10 +62,10 @@ export default class DynamicScheduler extends LightningElement {
       this.formFields[name] = value;
     }
     createWorkOrder() {
-      if (!technician) {
+      if (!activeContact) {
         return this.showToast('Invalid or empty contact', error.body.message, 'error');
       }
-      this.formFields['Technician__c'] = this.technician;
+      this.formFields['Technician__c'] = this.activeContact;
       const recordInput = { 
         apiName: Work_Order__c.objectApiName, 
         fields: this.formFields
@@ -86,8 +86,7 @@ export default class DynamicScheduler extends LightningElement {
       }));
     }
     handleContactSelection(event) {
-      this.technician = event.detail;
-      console.log('contact' + this.technician);
+      this.activeContact = event.detail;
     }
     closeAction() {
       this.dispatchEvent(new CloseActionScreenEvent());

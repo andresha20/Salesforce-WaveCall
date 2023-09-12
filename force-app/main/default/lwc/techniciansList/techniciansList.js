@@ -22,7 +22,6 @@ export default class TechniciansList extends LightningElement {
         return this._activeContact;
     };
     set activeContact(value) {
-        console.log('contact till here')
         this.setAttribute('activeContact', value);
         this._activeContact = value;
         this.handleValueChange(value);
