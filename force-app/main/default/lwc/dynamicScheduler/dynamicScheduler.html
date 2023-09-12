@@ -2,7 +2,6 @@
     <lightning-card title="New Work Order">
         <div class="slds-var-p-around_medium">
             <form class="createForm">
-                <lightning-input label="Creation Date" placeholder="Creation date" name="Creation_Date__c" onchange={changeHandler} class="slds-var-m-around_x-small"></lightning-input>
                 <lightning-combobox
                     name="Assistance_Type__c"
                     label="Assistance type"
@@ -40,9 +39,7 @@
                 <template if:false={selectedTimeValue}>
                     <p>Select a day and hour block to see the available technicians.</p>
                 </template>
-                <template if:true={activeContact}>
-                    <lightning-button label="Create Work Order" onclick={createWorkOrder} variant="brand"></lightning-button>
-                </template>
+                <lightning-button if:true={displayButton} label="Create Work Order" onclick={createWorkOrder} variant="brand"></lightning-button>
             </form>
         </div>
     </lightning-card>
