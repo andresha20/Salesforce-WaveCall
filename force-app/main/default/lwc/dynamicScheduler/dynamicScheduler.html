@@ -1,11 +1,49 @@
 <template>
-    <lightning-combobox
-        name="dynamicScheduler"
-        label="Select desired availability"
-        value={selectedValue}
-        placeholder="Select the customer's desired availability"
-        options={picklistValues}
-        onchange={handleChange}
-    ></lightning-combobox>
-    <c-technicians-list selected-value-from-parent={selectedValue}></c-technicians-list>
+    <lightning-card title="New Work Order">
+        <div class="slds-var-p-around_medium">
+            <form class="createForm">
+                <lightning-input label="Creation Date" placeholder="Creation date" name="Creation_Date__c" onchange={changeHandler} class="slds-var-m-around_x-small"></lightning-input>
+                <lightning-combobox
+                    name="Assistance_Type__c"
+                    label="Assistance type"
+                    class="slds-var-m-around_x-small"
+                    placeholder="Select assistance type"
+                    options={assistanceTypeValues}
+                    onchange={changehandler}
+                ></lightning-combobox>
+                <lightning-combobox
+                    name="dynamicDayScheduler"
+                    label="Select desired day"
+                    class="slds-var-m-around_x-small"
+                    value={selectedDayValue}
+                    placeholder="Select the customer's desired day of visit"
+                    options={daysPicklistValues}
+                    onchange={handleDaysChange}
+                ></lightning-combobox>
+                <lightning-combobox
+                    name="dynamicTimeScheduler"
+                    label="Select desired time"
+                    class="slds-var-m-around_x-small"
+                    value={selectedTimeValue}
+                    placeholder="Select the customer's desired time of visit"
+                    options={timePicklistValues}
+                    onchange={handleTimeChange}
+                ></lightning-combobox>
+                <template if:true={selectedTimeValue}>
+                    <c-technicians-list 
+                        selected-days-value-from-parent={selectedDayValue}
+                        selected-time-value-from-parent={selectedTimeValue}
+                        handle-contact-selection={handleContactSelection}
+                        active-contact={technician}
+                    ></c-technicians-list>
+                </template>
+                <template if:false={selectedTimeValue}>
+                    <p>Select a day and hour block to see the available technicians.</p>
+                </template>
+                <template if:true={technician}>
+                    <lightning-button label="Create Work Order" onclick={createWorkOrder} variant="brand"></lightning-button>
+                </template>
+            </form>
+        </div>
+    </lightning-card>
 </template>

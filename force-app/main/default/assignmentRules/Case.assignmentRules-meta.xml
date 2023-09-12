@@ -36,11 +36,6 @@
                 <field>Case.Subject</field>
                 <operation>notEqual</operation>
             </criteriaItems>
-            <criteriaItems>
-                <field>Case.Status</field>
-                <operation>equals</operation>
-                <value>New</value>
-            </criteriaItems>
         </ruleEntry>
     </assignmentRule>
     <assignmentRule>

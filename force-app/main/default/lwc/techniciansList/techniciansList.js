@@ -2,17 +2,48 @@ import { LightningElement, api, wire } from 'lwc';
 import getAvailableTechnicians from '@salesforce/apex/DynamicShedulerTechsController.getAvailableTechnicians';
 
 export default class TechniciansList extends LightningElement {
-    selectedValue;
-    @api get selectedValueFromParent() {
-        return this.selectedValue;
+    selectedDaysValue;
+    selectedTimeValue;
+    _handleContactSelection;
+    _activeContact;
+
+    @api get handleContactSelection() {
+        return this._handleContactSelection;
     };
-    set selectedValueFromParent(value) {
-        this.setAttribute('selectedValueFromParent', value);
-        this.selectedValue = value;
+    /**
+     * @param {any} value
+     */
+    set handleContactSelection(value) {
+        this.setAttribute('handleContactSelection', value);
+        this._handleContactSelection = value;
+        this.handleValueChange(value);
+    }
+    @api get activeContact() {
+        return this._activeContact;
+    };
+    set activeContact(value) {
+        this.setAttribute('activeContact', value);
+        this._activeContact = value;
+        this.handleValueChange(value);
+    }
+    @api get selectedDaysValueFromParent() {
+        return this.selectedDaysValue;
+    };
+    set selectedDaysValueFromParent(value) {
+        this.setAttribute('selectedDaysValueFromParent', value);
+        this.selectedDaysValue = value;
+        this.handleValueChange(value);
+    }
+    @api get selectedTimeValueFromParent() {
+        return this.selectedTimeValue;
+    };
+    set selectedTimeValueFromParent(value) {
+        this.setAttribute('selectedTimeValueFromParent', value);
+        this.selectedTimeValue = value;
         this.handleValueChange(value);
     }
 
-    @wire(getAvailableTechnicians, { schedule: '$selectedValue' }) technicians;
+    @wire(getAvailableTechnicians, { scheduleDay: '$selectedDaysValue', scheduleTime: '$selectedTimeValue' }) technicians;
     handleValueChange(value) {
         console.log(value);
     }

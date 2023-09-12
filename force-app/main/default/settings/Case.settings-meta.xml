@@ -12,8 +12,8 @@
     <caseMergeInLightning>false</caseMergeInLightning>
     <closeCaseThroughStatusChange>false</closeCaseThroughStatusChange>
     <defaultCaseFeedLayoutOn>true</defaultCaseFeedLayoutOn>
-    <defaultCaseOwner>andreshenao.2021@wise-impala-3zn1f4.com</defaultCaseOwner>
-    <defaultCaseOwnerType>User</defaultCaseOwnerType>
+    <defaultCaseOwner>Case_Queue_From_Phone</defaultCaseOwner>
+    <defaultCaseOwnerType>Queue</defaultCaseOwnerType>
     <defaultCaseUser>andreshenao.2021@wise-impala-3zn1f4.com</defaultCaseUser>
     <emailToCase>
         <enableE2CAttachmentAsFile>false</enableE2CAttachmentAsFile>
@@ -63,6 +63,7 @@
     <notifyOwnerOnCaseComment>false</notifyOwnerOnCaseComment>
     <notifyOwnerOnCaseOwnerChange>false</notifyOwnerOnCaseOwnerChange>
     <showEmailAttachmentsInCaseAttachmentsRL>true</showEmailAttachmentsInCaseAttachmentsRL>
+    <systemUserEmail>automatedcase@00d8b0000038xuheaa.ext</systemUserEmail>
     <useSystemEmailAddress>true</useSystemEmailAddress>
     <useSystemUserAsDefaultCaseUser>false</useSystemUserAsDefaultCaseUser>
     <visibleInCssCheckbox>false</visibleInCssCheckbox>

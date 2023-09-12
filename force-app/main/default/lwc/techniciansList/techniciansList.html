@@ -1,13 +1,12 @@
 <template>
-    Selected value: {selectedValue}
     <template if:true={technicians.data}>
         <template for:each={technicians.data} for:item="technician">
-            <lightning-layout vertical-align="center" key={technician.Id}>
-                <li>{technician.Name}</li>
-            </lightning-layout>
+            <lightning-layout-item key={technician.Id} class="slds-var-p-around_x-small" vertical-align="center">
+                <c-technician-tile active-contact={activeContact} onselectcontact={handleContactSelection} technician={technician}></c-technician-tile>
+            </lightning-layout-item>
         </template>
     </template>
-    <template if:false={}>
+    <template if:false={technicians.data}>
         <p>No desired availability has been selected.</p>
     </template>
 </template>

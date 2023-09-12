@@ -123,5 +123,5 @@
         <members>*</members>
         <name>SharingRules</name>
     </types>
-    <version>46.0</version>
+    <version>58.0</version>
 </Package>

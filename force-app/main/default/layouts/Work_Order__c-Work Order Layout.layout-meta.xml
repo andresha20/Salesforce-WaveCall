@@ -58,6 +58,10 @@
                 <behavior>Required</behavior>
                 <field>Schedule_Picker__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Schedule_Days_Picker__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
