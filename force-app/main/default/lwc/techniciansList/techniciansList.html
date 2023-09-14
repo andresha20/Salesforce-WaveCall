@@ -2,7 +2,7 @@
     <template if:true={technicians.data}>
         <template for:each={technicians.data} for:item="technician">
             <lightning-layout-item key={technician.Id} class="slds-var-p-around_x-small" vertical-align="center">
-                <c-technician-tile active-contact={activeContact} onselectcontact={handleContactSelection} technician={technician}></c-technician-tile>
+                <c-technician-tile active-technician={activeTechnician} active-contact={activeContact} onselectcontact={handleGrandChild} technician={technician}></c-technician-tile>
             </lightning-layout-item>
         </template>
     </template>

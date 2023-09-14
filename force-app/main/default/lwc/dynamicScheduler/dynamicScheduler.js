@@ -16,10 +16,20 @@ export default class DynamicScheduler extends LightningElement {
     assistanceTypeValues = [];
     daysPicklistValues = [];
     timePicklistValues = [];
-    activeContact;
+    _activeContact = null;
     selectedDayValue = 'Monday';
     selectedTimeValue = '07:00 to 09:00';
 
+    @api get activeContact() {
+      return this._activeContact;
+    };
+    set activeContact(value) {
+      this._activeContact = value;
+      this.handleValueChange(value);
+    }
+    handleValueChange(value) {
+      console.log(value);
+    }
     @wire(getPicklistValues, {
       recordTypeId: '0128b000001elmmAAA',
       fieldApiName: Assistance_Type__c,
@@ -60,21 +70,25 @@ export default class DynamicScheduler extends LightningElement {
         this.selectedTimeValue = event.detail.value;
     }
     changeHandler(event) {
-      const { name, value } = event;
+      const { name, value } = event.target;
       this.formFields[name] = value;
     }
     createWorkOrder() {
-      if (!activeContact) {
-        return this.showToast('Invalid or empty contact', error.body.message, 'error');
+      if (!this.activeContact) {
+        return this.showToast('Invalid or empty contact', 'Select a technician from the list first.', 'error');
       }
       this.formFields['Technician__c'] = this.activeContact;
-      this.formFields['CreationDate'] = new Date().toISOString();
+      this.formFields['Creation_Date__c'] = new Date().toISOString();
+      this.formFields['Schedule_Days_Picker__c'] = this.selectedDayValue;
+      this.formFields['Schedule_Picker__c'] = this.selectedTimeValue;
+      this.formFields['Case__c'] = this.recordId;
       const recordInput = { 
         apiName: Work_Order__c.objectApiName, 
-        
         fields: this.formFields
       };
+      // Create work order
       createRecord(recordInput).then(result => {
+        // Update contact
         updateTechniciansAvailability({ 
           technicianId: this.activeContact, 
           scheduleDay: this.selectedDayValue, 
@@ -85,9 +99,10 @@ export default class DynamicScheduler extends LightningElement {
           console.log(error);
           this.showToast('Error updating contact record', error.body.message, 'error');
         })
-        this.showToast('success', `Work order created with ID ${result.id}`);
+        this.showToast('Success', `Work order created with ID ${result.id}`, 'success');
         this.template.querySelector('form.createForm').reset();
         this.formFields = {};
+        this.closeAction();
       }).catch(error => {
         console.log(error);
         this.showToast('Error creating record', error.body.message, 'error');
@@ -101,8 +116,8 @@ export default class DynamicScheduler extends LightningElement {
       }));
     }
     handleContactSelection(event) {
-      this.activeContact = event.detail;
       this.displayButton = true;
+      this._activeContact = event.detail;
     }
     closeAction() {
       this.dispatchEvent(new CloseActionScreenEvent());

@@ -7,17 +7,13 @@ export default class TechniciansList extends LightningElement {
     _handleContactSelection;
     _activeContact;
 
-    @api get handleContactSelection() {
-        return this._handleContactSelection;
-    };
-    /**
-     * @param {any} value
-     */
-    set handleContactSelection(value) {
-        this.setAttribute('handleContactSelection', value);
-        this._handleContactSelection = value;
-        this.handleValueChange(value);
+    handleGrandChild(value) {
+        const selectEvent = new CustomEvent('selectcontact', {
+            detail: value.detail
+        });
+        this.dispatchEvent(selectEvent);
     }
+
     @api get activeContact() {
         return this._activeContact;
     };
@@ -45,6 +41,6 @@ export default class TechniciansList extends LightningElement {
 
     @wire(getAvailableTechnicians, { scheduleDay: '$selectedDaysValue', scheduleTime: '$selectedTimeValue' }) technicians;
     handleValueChange(value) {
-        console.log(value);
+        console.log('intermediate ran', value);
     }
 }
