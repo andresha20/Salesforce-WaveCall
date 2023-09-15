@@ -1,7 +1,7 @@
 import { LightningElement, wire, api } from 'lwc';
 import { getPicklistValues } from 'lightning/uiObjectInfoApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import { createRecord } from 'lightning/uiRecordApi';
+import { createRecord, updateRecord } from 'lightning/uiRecordApi';
 import { CloseActionScreenEvent } from 'lightning/actions';
 import Work_Order__c from '@salesforce/schema/Work_Order__c'
 import Schedule_Picker__c from '@salesforce/schema/Work_Order__c.Schedule_Picker__c'
@@ -98,6 +98,14 @@ export default class DynamicScheduler extends LightningElement {
         }).catch(error => {
           console.log(error);
           this.showToast('Error updating contact record', error.body.message, 'error');
+        })
+        updateRecord({
+          fields: { Id: this.recordId, Status: 'Escalated' }
+        }).then(result => {
+          console.log(`Case record's Status with ID ${result.id} updated to Escalated.`)
+        }).catch(error => {
+          console.log(error);
+          this.showToast('Error updating case record', error.body.message, 'error');
         })
         this.showToast('Success', `Work order created with ID ${result.id}`, 'success');
         this.template.querySelector('form.createForm').reset();
