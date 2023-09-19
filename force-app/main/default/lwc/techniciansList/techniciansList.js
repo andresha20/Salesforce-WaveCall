@@ -16,7 +16,7 @@ export default class TechniciansList extends LightningElement {
 
     @api get activeContact() {
         return this._activeContact;
-    }
+    };
     set activeContact(value) {
         this.setAttribute('activeContact', value);
         this._activeContact = value;
@@ -24,7 +24,7 @@ export default class TechniciansList extends LightningElement {
     }
     @api get selectedDaysValueFromParent() {
         return this.selectedDaysValue;
-    }
+    };
     set selectedDaysValueFromParent(value) {
         this.setAttribute('selectedDaysValueFromParent', value);
         this.selectedDaysValue = value;
@@ -32,7 +32,7 @@ export default class TechniciansList extends LightningElement {
     }
     @api get selectedTimeValueFromParent() {
         return this.selectedTimeValue;
-    }
+    };
     set selectedTimeValueFromParent(value) {
         this.setAttribute('selectedTimeValueFromParent', value);
         this.selectedTimeValue = value;

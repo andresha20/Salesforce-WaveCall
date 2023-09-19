@@ -8,7 +8,7 @@ describe('c-dynamic-scheduler', () => {
         }
     });
 
-    it('sets activeContact property correctly when handleContactSelection is called', () => {
+    it('sets activeContact property when handleContactSelection is called', () => {
         const element = createElement('c-dynamicScheduler', {
             is: DynamicScheduler
         });

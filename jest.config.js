@@ -6,7 +6,7 @@ module.exports = {
         '^lightning/actions$':
             '<rootDir>/force-app/test/jest-mocks/lightning/actions',
         '^lightning/uiRecordApi$':
-        '<rootDir>/force-app/test/jest-mocks/lightning/uiRecordApi',
+            '<rootDir>/force-app/test/jest-mocks/lightning/uiRecordApi',
     
     },
     testTimeout: 10000,

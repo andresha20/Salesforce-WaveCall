@@ -43,23 +43,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>X07_00_to_09_00__pc</field>
+                <field>RelatedUser__pc</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>X09_00_to_11_00__pc</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>X11_00_to_13_00__pc</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>X13_00_to_15_00__pc</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>X15_00_to_17_00__pc</field>
+                <field>RelatedUser__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -315,13 +303,6 @@
         <fields>CASES.CREATED_DATE</fields>
         <fields>CASES.PRIORITY</fields>
         <relatedList>Case.Customer_Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>CASES.CASE_NUMBER</fields>
-        <fields>CASES.SUBJECT</fields>
-        <fields>CASES.CREATED_DATE</fields>
-        <fields>CASES.PRIORITY</fields>
-        <relatedList>Case.Agent_Account__c</relatedList>
     </relatedLists>
     <runAssignmentRulesDefault>false</runAssignmentRulesDefault>
     <showEmailCheckbox>true</showEmailCheckbox>

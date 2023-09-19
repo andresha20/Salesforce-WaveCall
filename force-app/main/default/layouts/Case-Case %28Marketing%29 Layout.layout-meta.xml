@@ -109,11 +109,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Agent_Account__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Agent_Name__c</field>
+                <field>Agent_User__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

@@ -19,6 +19,10 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Work_Order__c</object>
-        <viewAllRecords>false</viewAllRecords>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <tabSettings>
+        <tab>Work_Order__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
 </PermissionSet>

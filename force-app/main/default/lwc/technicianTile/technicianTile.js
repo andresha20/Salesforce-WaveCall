@@ -6,7 +6,7 @@ export default class TechnicianTile extends LightningElement {
 
     @api get activeContact() {
         return this._activeContact;
-    }
+    };
     set activeContact(value) {
         this.setAttribute('activeContact', value);
         this._activeContact = value;
@@ -14,7 +14,7 @@ export default class TechnicianTile extends LightningElement {
     }
 
     get isActive() {
-        return this.technician.Id === this._activeContact;
+        return this.technician.Id == this._activeContact;
     }
 
     handleOpenRecordClick() {

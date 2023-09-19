@@ -51,23 +51,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>X07_00_to_09_00__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>X09_00_to_11_00__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>X11_00_to_13_00__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>X13_00_to_15_00__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>X15_00_to_17_00__c</field>
+                <field>RelatedUser__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

@@ -14,5 +14,6 @@ package.xml
 **/settings/**
 
 # LWC Jest
+force-app\main\default\lwc\dynamicScheduler\__tests__
 force-app/**/__test__/**
 **/__tests__/**
