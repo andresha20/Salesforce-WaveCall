@@ -7,6 +7,12 @@ package.xml
 # LWC configuration files
 **/jsconfig.json
 **/.eslintrc.json
+**/appMenus/**
+**/appSwitcher/**
+**/objectTranslations/**
+**/profiles/**
+**/settings/**
 
 # LWC Jest
+force-app/**/__test__/**
 **/__tests__/**

@@ -12,7 +12,6 @@ import updateTechniciansAvailability from '@salesforce/apex/DynamicShedulerTechs
 export default class DynamicScheduler extends LightningElement {
     @api recordId;
     formFields = {};
-    displayButton = false;
     assistanceTypeValues = [];
     daysPicklistValues = [];
     timePicklistValues = [];
@@ -22,7 +21,8 @@ export default class DynamicScheduler extends LightningElement {
 
     @api get activeContact() {
       return this._activeContact;
-    };
+    }
+
     set activeContact(value) {
       this._activeContact = value;
       this.handleValueChange(value);
@@ -77,11 +77,11 @@ export default class DynamicScheduler extends LightningElement {
       if (!this.activeContact) {
         return this.showToast('Invalid or empty contact', 'Select a technician from the list first.', 'error');
       }
-      this.formFields['Technician__c'] = this.activeContact;
-      this.formFields['Creation_Date__c'] = new Date().toISOString();
-      this.formFields['Schedule_Days_Picker__c'] = this.selectedDayValue;
-      this.formFields['Schedule_Picker__c'] = this.selectedTimeValue;
-      this.formFields['Case__c'] = this.recordId;
+      this.formFields.Technician__c = this.activeContact;
+      this.formFieldsCreation_Date__c = new Date().toISOString();
+      this.formFieldsSchedule_Days_Picker__c = this.selectedDayValue;
+      this.formFieldsSchedule_Picker__c = this.selectedTimeValue;
+      this.formFieldsCase__c = this.recordId;
       const recordInput = { 
         apiName: Work_Order__c.objectApiName, 
         fields: this.formFields
@@ -93,16 +93,16 @@ export default class DynamicScheduler extends LightningElement {
           technicianId: this.activeContact, 
           scheduleDay: this.selectedDayValue, 
           scheduleTime: this.selectedTimeValue 
-        }).then(result => {
-          console.log(`Contact record with ID ${result.Id}.`)
+        }).then(updateControllerResult => {
+          console.log(`Contact record with ID ${updateControllerResult.Id}.`)
         }).catch(error => {
           console.log(error);
           this.showToast('Error updating contact record', error.body.message, 'error');
         })
         updateRecord({
           fields: { Id: this.recordId, Status: 'Escalated' }
-        }).then(result => {
-          console.log(`Case record's Status with ID ${result.id} updated to Escalated.`)
+        }).then(updateResult => {
+          console.log(`Case record's Status with ID ${updateResult.id} updated to Escalated.`)
         }).catch(error => {
           console.log(error);
           this.showToast('Error updating case record', error.body.message, 'error');
@@ -115,6 +115,7 @@ export default class DynamicScheduler extends LightningElement {
         console.log(error);
         this.showToast('Error creating record', error.body.message, 'error');
       })
+      return true;
     }
     showToast(title, message, variant) {
       this.dispatchEvent(new ShowToastEvent({ 
