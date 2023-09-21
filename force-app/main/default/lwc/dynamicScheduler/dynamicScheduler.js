@@ -76,6 +76,9 @@ export default class DynamicScheduler extends LightningElement {
       if (!this.activeContact) {
         return this.showToast('Invalid or empty contact', 'Select a technician from the list first.', 'error');
       }
+      if (!this.formFields.Assistance_Type__c) {
+        return this.showToast('Invalid assistance type', 'Select the type of assistance.', 'error');
+      }
       this.formFields.Technician__c = this.activeContact;
       this.formFields.Creation_Date__c = new Date().toISOString();
       this.formFields.Schedule_Days_Picker__c = this.selectedDayValue;
