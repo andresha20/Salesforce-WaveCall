@@ -6,7 +6,7 @@
     <columns>CASES.SUBJECT</columns>
     <columns>CASES.STATUS</columns>
     <columns>CASES.PRIORITY</columns>
-    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
     <columns>CORE.USERS.ALIAS</columns>
     <filterScope>Everything</filterScope>
     <filters>
@@ -15,4 +15,8 @@
         <value>1</value>
     </filters>
     <label>All Closed Cases</label>
+    <sharedTo>
+        <role>Call_Center_Agent</role>
+        <role>Manager</role>
+    </sharedTo>
 </ListView>

@@ -13,5 +13,6 @@
     <queue>Case_Queue_From_Email</queue>
     <sharedTo>
         <role>Call_Center_Agent</role>
+        <role>Manager</role>
     </sharedTo>
 </ListView>
